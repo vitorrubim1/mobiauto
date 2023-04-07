@@ -14,33 +14,25 @@ export const theme = createTheme({
           border: 0,
           textDecoration: 'none',
         },
-        ':root': {
-          fontSize: '62.5%' /* 1rem = 10px */,
-          fontFamily: "'Roboto', sans-serif",
-        },
         body: {
-          fontSize: '1.6rem',
-          backgroundColor: '#F0F0F5',
+          backgroundColor: '#f8f7fc',
+          color: '#464059',
         },
       },
     },
   },
 
   palette: {
-    mode: 'light',
-
-    primary: {
-      main: '#5E80F6',
-      light: '#4863F7',
-      dark: '#3249CB',
+    secondary: {
+      light: '#7c3aed',
+      main: '#5c00be',
+      dark: '#4c1d95',
     },
 
-    grey: {
-      50: '#F0F0F5',
-      100: '#c2c2c2',
-      200: '#64748b',
-      300: '#4b5563',
-      400: '#3a3a3a',
+    success: {
+      light: '#ddf4f2',
+      main: '#00a28d',
+      dark: '#064e3b',
     },
   },
 
@@ -49,17 +41,17 @@ export const theme = createTheme({
     fontWeightRegular: 400,
     fontWeightBold: 700,
 
-    h1: {
-      fontWeight: 700,
+    h4: {
+      fontWeight: 600,
     },
 
-    h2: {
+    h5: {
       fontWeight: 600,
     },
 
     button: {
       textTransform: 'none',
-      fontSize: '1.6rem',
+      fontWeight: 600,
     },
   },
 
