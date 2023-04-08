@@ -1,9 +1,91 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-// import { Container } from './styles';
+import { GoBackButton, MaskifyContent } from '@components/index';
 
-const Exercises: React.FC = () => {
-  return <div />;
-};
+import { AccordionContainer, Wrapper } from './styles';
 
-export default Exercises;
+const accordionItens = [
+  {
+    id: 'panel1bh-header',
+    name: 'Exercício 01',
+    description: 'Maskify',
+    content: <MaskifyContent />,
+  },
+  {
+    id: 'panel2bh-header',
+    name: 'Exercício 02',
+    description: 'Atualizar objeto',
+    content: (
+      <Typography>
+        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
+        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
+        laoreet.
+      </Typography>
+    ),
+  },
+  {
+    id: 'panel3bh-header',
+    name: 'Exercício 03',
+    description: 'Rick and Morty',
+    content: (
+      <Typography>
+        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
+        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
+        laoreet.
+      </Typography>
+    ),
+  },
+  {
+    id: 'panel4bh-header',
+    name: 'Exercício 04',
+    description: 'Primeira letra',
+    content: (
+      <Typography>
+        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
+        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
+        laoreet.
+      </Typography>
+    ),
+  },
+];
+
+export default function Exercises() {
+  const [expanded, setExpanded] = useState<string | false>(false);
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
+  return (
+    <Wrapper>
+      <GoBackButton to="/" />
+
+      {accordionItens.map(item => (
+        <AccordionContainer
+          expanded={expanded === item.id}
+          onChange={handleChange(item.id)}
+          key={item.id}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id={item.id}
+          >
+            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+              {item.name}
+            </Typography>
+
+            <Typography sx={{ color: 'text.secondary' }}>
+              {item.description}
+            </Typography>
+          </AccordionSummary>
+
+          <AccordionDetails>{item.content}</AccordionDetails>
+        </AccordionContainer>
+      ))}
+    </Wrapper>
+  );
+}

@@ -27,7 +27,10 @@ export default function Home() {
           >
             <BoxItem
               onClick={() => {
-                if (item === 'Exercícios') router.push('/exercises');
+                if (item === 'Exercícios') {
+                  router.push('/exercises');
+                  return;
+                }
 
                 router.push('/fipe');
               }}
