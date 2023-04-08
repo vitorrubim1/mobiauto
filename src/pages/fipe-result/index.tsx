@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { IconButton, Typography } from '@mui/material';
-import KeyboardReturnOutlinedIcon from '@mui/icons-material/KeyboardReturnOutlined';
+import { Typography } from '@mui/material';
 import { toast } from 'react-toastify';
 
 import { useFipe } from '@hooks/useFipe';
+import { GoBackButton } from '@components/index';
 
-import { Container, Chip } from './styles';
+import { Chip, Container, GoBackWrapper } from './styles';
 
 const Result: React.FC = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const Result: React.FC = () => {
 
   useEffect(() => {
     if (!selectedCarSpecifications) {
-      router.push('/');
+      router.push('/fipe');
 
       toast.error('Selecione o modelo para prosseguir.');
     }
@@ -31,11 +31,9 @@ const Result: React.FC = () => {
         />
       </Head>
 
-      <header>
-        <IconButton aria-label="voltar" onClick={() => router.push('/')}>
-          <KeyboardReturnOutlinedIcon />
-        </IconButton>
-      </header>
+      <GoBackWrapper>
+        <GoBackButton to="/fipe" />
+      </GoBackWrapper>
 
       <Typography variant="h4">
         Tabela Fipe: Preço {selectedCarSpecifications?.Marca}{' '}

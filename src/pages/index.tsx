@@ -1,101 +1,42 @@
-import { Button, Typography, Autocomplete, TextField } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { useFipe } from '@hooks/useFipe';
-
-import { Container, Paper } from './style';
+import { Container, BoxItem } from './style';
 
 export default function Home() {
-  const {
-    brands,
-    brandIsLoading,
-    selectedBrand,
-    setSelectedBrand,
-
-    carModels,
-    modelIsLoading,
-    selectedModel,
-    setSelectedModel,
-
-    modelsYear,
-    modelsYearIsLoading,
-    selectedModelsYear,
-    setSelectedModelsYear,
-
-    handleGetCarValue,
-    carValueLoading,
-  } = useFipe();
+  const router = useRouter();
 
   return (
     <Container>
       <Head>
-        <title>Buscar modelo</title>
-        <meta
-          name="description"
-          content="Encontre o valor do carro! Selecione a Marca, Modelo e Ano do carro desejado. Em apenas alguns cliques, você poderá descobrir o valor estimado do carro que você está interessado"
-        />
+        <title>Mobiauto - Vitor Rubim</title>
       </Head>
 
-      <Typography variant="h4">Tabela Fipe</Typography>
-      <Typography variant="h5">
-        Consulte o valor de um veículo de forma gratuita
-      </Typography>
+      <Grid container spacing={3}>
+        {['Exercícios', 'Tabela FIPE'].map(item => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={6}
+            lg={6}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <BoxItem
+              onClick={() => {
+                if (item === 'Exercícios') router.push('/exercises');
 
-      <Paper>
-        <fieldset>
-          <Autocomplete
-            options={brands}
-            renderInput={params => <TextField {...params} label="Marca" />}
-            size="small"
-            loading={brandIsLoading}
-            isOptionEqualToValue={(option, value) =>
-              option.codigo === value.codigo
-            }
-            value={selectedBrand}
-            onChange={(_, value) => setSelectedBrand(value)}
-          />
-        </fieldset>
-
-        <fieldset>
-          <Autocomplete
-            options={carModels}
-            renderInput={params => <TextField {...params} label="Modelo" />}
-            size="small"
-            loading={modelIsLoading}
-            value={selectedModel}
-            isOptionEqualToValue={(option, value) =>
-              option.codigo === value.codigo
-            }
-            onChange={(_, value) => setSelectedModel(value)}
-          />
-        </fieldset>
-
-        {!!modelsYear[0] && (
-          <fieldset>
-            <Autocomplete
-              options={modelsYear}
-              renderInput={params => <TextField {...params} label="Ano" />}
-              size="small"
-              loading={modelsYearIsLoading}
-              value={selectedModelsYear}
-              isOptionEqualToValue={(option, value) =>
-                option.codigo === value.codigo
-              }
-              onChange={(_, value) => setSelectedModelsYear(value)}
-            />
-          </fieldset>
-        )}
-
-        <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          disabled={!selectedModelsYear?.codigo}
-          onClick={handleGetCarValue}
-        >
-          {carValueLoading ? 'Carregando...' : 'Consultar preço'}
-        </Button>
-      </Paper>
+                router.push('/fipe');
+              }}
+            >
+              <Typography variant="h5">{item}</Typography>
+            </BoxItem>
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 }

@@ -21,6 +21,7 @@
       "@services/*": ["services/*"],
       "@hooks/*": ["hooks/*"],
       "@dtos/*": ["dtos/*"],
+      "@components/*": ["components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

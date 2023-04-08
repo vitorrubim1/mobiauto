@@ -162,7 +162,7 @@ export const FipeProvider = ({ children }: FipeProviderProps) => {
 
       setSelectedCarSpecifications(data);
 
-      router.push('/result');
+      router.push('/fipe-result');
     } catch (error) {
       toast.error('Dados insuficiente para realizar busca das informações.');
     } finally {
