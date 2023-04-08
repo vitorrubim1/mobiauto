@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { GoBackButton, MaskifyContent } from '@components/index';
+import {
+  CheckFirstLetterContent,
+  GoBackButton,
+  MaskifyContent,
+  UpdateObjectContent,
+} from '@components/index';
 
 import { AccordionContainer, Wrapper } from './styles';
 
@@ -17,13 +22,7 @@ const accordionItens = [
     id: 'panel2bh-header',
     name: 'Exercício 02',
     description: 'Atualizar objeto',
-    content: (
-      <Typography>
-        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-        laoreet.
-      </Typography>
-    ),
+    content: <UpdateObjectContent />,
   },
   {
     id: 'panel3bh-header',
@@ -41,13 +40,7 @@ const accordionItens = [
     id: 'panel4bh-header',
     name: 'Exercício 04',
     description: 'Primeira letra',
-    content: (
-      <Typography>
-        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-        laoreet.
-      </Typography>
-    ),
+    content: <CheckFirstLetterContent />,
   },
 ];
 
