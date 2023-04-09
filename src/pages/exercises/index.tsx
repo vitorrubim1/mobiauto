@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import {
+  AccordionDetails,
+  AccordionSummary,
+  Breadcrumbs,
+  Link,
+  Typography,
+  Accordion,
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import {
@@ -10,7 +17,7 @@ import {
   UpdateObjectContent,
 } from '@components/index';
 
-import { AccordionContainer, Wrapper } from './styles';
+import { Wrapper, Flex } from './styles';
 
 const accordionItens = [
   {
@@ -51,8 +58,27 @@ export default function Exercises() {
     <Wrapper>
       <GoBackButton to="/" />
 
+      <Flex>
+        <Typography color="text.primary">
+          Esta é uma representação visual dos exercícios solicitados. Para
+          visualizar apenas os arquivos, acesse:
+        </Typography>
+
+        <Breadcrumbs aria-label="breadcrumb" sx={{ mb: '1rem' }}>
+          <Typography color="text.primary">src</Typography>
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/material-ui/getting-started/installation/"
+          >
+            exercises
+          </Link>
+          <Typography color="text.primary">...</Typography>
+        </Breadcrumbs>
+      </Flex>
+
       {accordionItens.map(item => (
-        <AccordionContainer
+        <Accordion
           expanded={expanded === item.id}
           onChange={handleChange(item.id)}
           key={item.id}
@@ -72,7 +98,7 @@ export default function Exercises() {
           </AccordionSummary>
 
           <AccordionDetails>{item.content}</AccordionDetails>
-        </AccordionContainer>
+        </Accordion>
       ))}
     </Wrapper>
   );

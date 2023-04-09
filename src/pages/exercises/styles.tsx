@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Accordion } from '@mui/material';
 
 export const Wrapper = styled.div`
   max-width: 50rem;
@@ -13,6 +12,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export const AccordionContainer = styled(Accordion)`
-  /* width: 100%; */
+export const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
 `;

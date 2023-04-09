@@ -16,7 +16,31 @@ export const theme = createTheme({
         },
         body: {
           backgroundColor: '#f8f7fc',
-          color: '#464059',
+        },
+      },
+    },
+
+    MuiAccordionDetails: {
+      defaultProps: {
+        style: {
+          maxHeight: '80vh',
+          overflowY: 'auto',
+        },
+      },
+      styleOverrides: {
+        root: {
+          '::-webkit-scrollbar': {
+            width: '8px',
+            backgroundColor: '#f8f7fc',
+          },
+
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#9E9E9E',
+          },
+
+          '&::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#757575',
+          },
         },
       },
     },
