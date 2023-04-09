@@ -65,6 +65,12 @@ const RickAndMortyContent: React.FC = () => {
           </ListItem>
         ))}
       </List>
+
+      <Typography variant="h5" sx={{ m: '1rem 0' }}>
+        Resultado da requisição modificada:
+      </Typography>
+
+      <pre>{JSON.stringify(characters, null, 2)}</pre>
     </>
   );
 };
