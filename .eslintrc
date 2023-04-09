@@ -24,6 +24,7 @@
     "prettier"
   ],
   "rules": {
+    "react/prop-types": "off",
     "jsx-a11y/aria-role": "off",
     "no-underscore-dangle": "off",
     "no-plusplus": "off",

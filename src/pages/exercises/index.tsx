@@ -6,6 +6,7 @@ import {
   CheckFirstLetterContent,
   GoBackButton,
   MaskifyContent,
+  RickAndMortyContent,
   UpdateObjectContent,
 } from '@components/index';
 
@@ -28,13 +29,7 @@ const accordionItens = [
     id: 'panel3bh-header',
     name: 'Exercício 03',
     description: 'Rick and Morty',
-    content: (
-      <Typography>
-        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-        laoreet.
-      </Typography>
-    ),
+    content: <RickAndMortyContent />,
   },
   {
     id: 'panel4bh-header',

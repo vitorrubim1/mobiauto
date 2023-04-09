@@ -9,12 +9,16 @@ const CheckFirstLetterContent: React.FC = () => {
 
   const checkIfTheFirstLetterIsUppercase = (word: string): boolean => {
     const firstLetter = word[0];
-    return /^[A-ZÀ-ÖØ-Þ]/.test(firstLetter);
+    return firstLetter?.toUpperCase() === firstLetter;
   };
 
   const handleInputChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const inputValue = event.target.value;
+
+      // Just letters
+      if (!/^[a-zA-Z]*$/.test(inputValue)) return;
+
       setValue(inputValue);
       setFirstLetterIsUpperCase(checkIfTheFirstLetterIsUppercase(inputValue));
     },
