@@ -16,7 +16,7 @@ const RickAndMortyContent: React.FC = () => {
   const [characters, setCharacters] = useState<RickAndMortyParsed[]>([]);
 
   useEffect(() => {
-    const handleGetCharactersData = async () => {
+    const getRickAndMortyCharacters = async () => {
       try {
         const { data } = await axios.get<RickAndMortyResponse[]>(
           'https://rickandmortyapi.com/api/character/1,2,3,4,5',
@@ -39,7 +39,7 @@ const RickAndMortyContent: React.FC = () => {
       }
     };
 
-    handleGetCharactersData();
+    getRickAndMortyCharacters();
   }, []);
 
   return (
