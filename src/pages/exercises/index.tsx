@@ -69,7 +69,8 @@ export default function Exercises() {
           <Link
             underline="hover"
             color="inherit"
-            href="/material-ui/getting-started/installation/"
+            href="https://github.com/vitorrubim1/mobiauto/tree/main/src/exercises"
+            target="_blank"
           >
             exercises
           </Link>
