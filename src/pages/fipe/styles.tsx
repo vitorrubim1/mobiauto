@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Paper as PaperMUI, Box } from '@mui/material';
+import { Paper as PaperMUI } from '@mui/material';
 
-export const Container = styled.main`
+const Container = styled.main`
   max-width: 32.5rem;
   height: 100vh;
 
@@ -16,7 +16,7 @@ export const Container = styled.main`
   flex-direction: column;
 `;
 
-export const BoxItem = styled(Box)`
+const BoxItem = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +43,7 @@ export const BoxItem = styled(Box)`
   }
 `;
 
-export const Paper = styled(PaperMUI)`
+const Paper = styled(PaperMUI)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,3 +64,9 @@ export const Paper = styled(PaperMUI)`
     padding: 1rem 1.75rem;
   }
 `;
+
+export default function FipeStyles() {
+  return null;
+}
+
+export { Container, BoxItem, Paper };

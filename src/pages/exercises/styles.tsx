@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   max-width: 50rem;
   height: 100vh;
 
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Flex = styled.div`
+const Flex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,3 +20,9 @@ export const Flex = styled.div`
 
   width: 100%;
 `;
+
+export default function ExercisesStyles() {
+  return null;
+}
+
+export { Wrapper, Flex };
