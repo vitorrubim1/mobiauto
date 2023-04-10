@@ -24,6 +24,7 @@ export default function Home() {
             display="flex"
             alignItems="center"
             justifyContent="center"
+            key={item}
           >
             <BoxItem
               onClick={() => {

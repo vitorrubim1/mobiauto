@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 import { RickAndMortyParsed, RickAndMortyResponse } from '@dtos/RickAndMorty';
 
-const RickAndMortyContent: React.FC = () => {
+export function RickAndMortyContent() {
   const [characters, setCharacters] = useState<RickAndMortyParsed[]>([]);
 
   useEffect(() => {
@@ -73,6 +73,4 @@ const RickAndMortyContent: React.FC = () => {
       <pre>{JSON.stringify(characters, null, 2)}</pre>
     </>
   );
-};
-
-export { RickAndMortyContent };
+}

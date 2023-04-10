@@ -9,7 +9,7 @@ interface GoBackButtonProps {
   to: string;
 }
 
-const GoBackButton: React.FC<GoBackButtonProps> = ({ to }) => {
+export function GoBackButton({ to }: GoBackButtonProps) {
   const router = useRouter();
 
   return (
@@ -22,6 +22,4 @@ const GoBackButton: React.FC<GoBackButtonProps> = ({ to }) => {
       </IconButton>
     </Container>
   );
-};
-
-export { GoBackButton };
+}

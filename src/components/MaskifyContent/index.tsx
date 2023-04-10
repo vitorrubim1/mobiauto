@@ -10,7 +10,7 @@ import {
 
 import { Container } from './styles';
 
-const MaskifyContent: React.FC = () => {
+export function MaskifyContent() {
   const [texts, setTexts] = useState<string[]>([]);
   const [value, setValue] = useState('');
 
@@ -65,6 +65,4 @@ const MaskifyContent: React.FC = () => {
       </Button>
     </Container>
   );
-};
-
-export { MaskifyContent };
+}

@@ -7,7 +7,7 @@ interface ObjectData {
   value: string;
 }
 
-const UpdateObjectContent: React.FC = () => {
+export function UpdateObjectContent() {
   const [userData, setUserData] = useState({
     name: 'Marcos',
     country: 'Brasil',
@@ -105,6 +105,4 @@ const UpdateObjectContent: React.FC = () => {
       </Box>
     </>
   );
-};
-
-export { UpdateObjectContent };
+}

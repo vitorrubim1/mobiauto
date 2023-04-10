@@ -3,7 +3,7 @@ import { TextField, Typography } from '@mui/material';
 
 import { Container, StyledCheck, StyledClose } from './styles';
 
-const CheckFirstLetterContent: React.FC = () => {
+export function CheckFirstLetterContent() {
   const [value, setValue] = useState('');
   const [firstLetterIsUpperCase, setFirstLetterIsUpperCase] = useState(false);
 
@@ -60,6 +60,4 @@ const CheckFirstLetterContent: React.FC = () => {
       </Container>
     </>
   );
-};
-
-export { CheckFirstLetterContent };
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import {
   AccordionDetails,
   AccordionSummary,
@@ -56,6 +57,10 @@ export default function Exercises() {
 
   return (
     <Wrapper>
+      <Head>
+        <title>Exercícios</title>
+      </Head>
+
       <GoBackButton to="/" />
 
       <Flex>
