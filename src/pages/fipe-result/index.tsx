@@ -9,7 +9,7 @@ import { GoBackButton } from '@components/index';
 
 import { Chip, Container, GoBackWrapper } from './styles';
 
-const Result: React.FC = () => {
+export default function FipeResult() {
   const router = useRouter();
   const { selectedCarSpecifications } = useFipe();
 
@@ -52,6 +52,4 @@ const Result: React.FC = () => {
       </Typography>
     </Container>
   );
-};
-
-export default Result;
+}
