@@ -28,7 +28,7 @@ export default function Home() {
     carValueLoading,
   } = useFipe();
 
-  const modelIsSelected = !!modelsYear[0];
+  const modelIsSelected = !!modelsYear[0] && !!selectedBrand;
 
   return (
     <Container>
@@ -73,6 +73,7 @@ export default function Home() {
               option.codigo === value.codigo
             }
             onChange={(_, value) => setSelectedModel(value)}
+            disabled={!selectedBrand}
           />
         </fieldset>
 
