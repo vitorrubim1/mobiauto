@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { Container, BoxItem } from './style';
+import { Container, BoxItem } from './styles';
 
 export default function Home() {
   const router = useRouter();
