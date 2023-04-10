@@ -5,8 +5,7 @@ import { useFipe } from '@hooks/useFipe';
 
 import { GoBackButton } from '@components/index';
 
-import { Paper } from './styles';
-import { Container } from '../styles';
+import { Paper, Container } from './styles';
 
 export default function Home() {
   const {
