@@ -24,6 +24,6 @@
       "@components/*": ["components/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/exercises/01.js", "src/exercises/02.js", "src/exercises/04.js", "src/exercises/03.js"],
   "exclude": ["node_modules"]
 }
